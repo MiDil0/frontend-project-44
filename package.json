@@ -18,9 +18,16 @@
   "homepage": "https://github.com/MiDil0/frontend-project-44#readme",
   "type": "module",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-plugin-react": "^7.32.1"
   }
 }

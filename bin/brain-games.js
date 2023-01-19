@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-import { cli } from "../src/cli.js";
-cli();
+import brainEven from '../bin/brain-even.js';
+
+brainEven();
