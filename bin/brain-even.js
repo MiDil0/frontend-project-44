@@ -49,4 +49,3 @@ export default function brainEvengame() {
 
   console.log(`Congratulations, ${name} ! `);
 }
-
