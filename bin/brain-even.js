@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
- function games() {
+export default function brainEvengame() {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name} !`);
@@ -49,4 +49,4 @@ import readlineSync from 'readline-sync';
 
   console.log(`Congratulations, ${name} ! `);
 }
-export default games 
+
