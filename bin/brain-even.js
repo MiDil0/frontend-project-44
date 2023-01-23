@@ -44,7 +44,7 @@ export default function brainEvengame() {
         return;
       }
     }
-    i += 1;
+    
   }
 
   console.log(`Congratulations, ${name} ! `);
