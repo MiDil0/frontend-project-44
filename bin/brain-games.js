@@ -1,4 +1,4 @@
 #!/usr/bin/env node
+import name from '../src/cli.js';
 
-const gameName = readlineSync.question('What do you want to play? ');
-console.log(`${gameName}`);
+name();
