@@ -5,4 +5,8 @@ const name = () => {
   const name = readlineSync.question('May I have your name?: ');
   console.log(`Hello, ${name} !`);
 };
-export default name; 
+function randomNumber(min = 2, max = 100) {
+  const rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+export { greet, randomNumber };

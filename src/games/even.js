@@ -1,5 +1,5 @@
-import whatIsYourName from '../cli.js';
-import { randomNumber, question, check } from '../index.js';
+import { randomNumber } from '../cli.js';
+import playing from '../index.js'
 
 const userName = whatIsYourName();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
