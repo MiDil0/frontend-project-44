@@ -14,7 +14,7 @@ const calculate = (x, y, operator) => {
       return x - y;
     case '*':
       return x * y;
-    default:  
+    default:
       throw new Error(`Unknown operator received: '${operator}'!`);
   }
 };
@@ -26,7 +26,7 @@ const generateRound = () => {
   const question = `${number1} ${operator} ${number2}`;
   const correctAnswer = String(calculate(number1, number2, operator));
 
-  return [question, correctAnswer];
+  return [correctAnswer, question];
 };
 
 const runCalc = () => {
