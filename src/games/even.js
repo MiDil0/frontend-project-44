@@ -1,18 +1,15 @@
-import { randomNumber } from '../cli.js';
-import playing from '../index.js'
+#!/usr/bin/env node
+import { getRandomNumber } from '../utilit.js';
+import playing from '../index.js';
 
-const userName = whatIsYourName();
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const evenStart = (number = randomNumber()) => {
-  question(number);
-  let correctAnswer = '';
-  if (number % 2 === 0) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-  check(evenStart, userName, correctAnswer);
+const even = (number) => number % 2 === 0;
+
+const roundstart = () => {
+  const que = getRandomNumber(1, 99);
+  const answer = even(que) ? 'yes' : 'no';
+  return [answer, que];
 };
-
-export default evenStart;
+const runthisgame = () => playing(gameRule, roundstart);
+export default runthisgame;

@@ -1,47 +1,36 @@
-import name from '../cli.js';
+import playing from '../index.js';
+import { getRandomIndex, getRandomNumber } from '../utilit.js';
 
-const UserName = name();
-console.log('What is the result of the expression?');
-let i = 0;
+const description = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
+const minRange = 1;
+const maxRange = 100;
 
-function trueAnswer(f1, operator, f2) {
-  let result = 0;
-
+const calculate = (x, y, operator) => {
   switch (operator) {
     case '+':
-      result = Number(f1) + Number(f2);
-      break;
+      return x + y;
     case '-':
-      result = Number(f1) - Number(f2);
-      break;
+      return x - y;
     case '*':
-      result = Number(f1) * Number(f2);
-      break;
+      return x * y;
+    default:  
+      throw new Error(`Unknown operator received: '${operator}'!`);
   }
-  return result;
-}
-function rn() {
-  return Math.floor(Math.random() * 100 - 1);
-}
-while (i < 3) {
-  rn();
-  const RandomNumber = [rn(), rn()];
-  const operator = ['+', '-', '*'];
-  const randomIndex = Math.floor(Math.random() * 3);
-  const randomEx = (`${RandomNumber[0]} ${operator[randomIndex]} ${RandomNumber[1]}`);
-  const question = (`Question: ${randomEx}`);
-  console.log(question);
-  const answerEx = readlineSync.question('Your answer: ');
-  if (Number(answerEx) === trueAnswer(RandomNumber[0], operator[randomIndex], RandomNumber[1])) {
-    console.log('Correct!');
-    i += 1;
-    if (i === 3) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  } else {
-    console.log(`'${Number(answerEx)}' is wrong answer ;(. Correct answer was ${trueAnswer(RandomNumber[0], operator[randomIndex], RandomNumber[1])}.\nLet's try again, ${name}`);
-    break;
-  }
-}
+};
 
-export default brainCalcGame;
+const generateRound = () => {
+  const number1 = getRandomNumber(minRange, maxRange);
+  const number2 = getRandomNumber(minRange, maxRange);
+  const operator = operators[getRandomIndex(operators)];
+  const question = `${number1} ${operator} ${number2}`;
+  const correctAnswer = String(calculate(number1, number2, operator));
+
+  return [question, correctAnswer];
+};
+
+const runCalc = () => {
+  playing(description, generateRound);
+};
+
+export default runCalc;
