@@ -1,11 +1,9 @@
-
 import { getRandomNumber } from '../utilit.js';
 import playing from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const minRange = 1;
 const maxRange = 100;
-
 
 const getGCD = (x, y) => {
   if (y === 0) return x;
@@ -27,4 +25,3 @@ const runGCD = () => {
 };
 
 export default runGCD;
-

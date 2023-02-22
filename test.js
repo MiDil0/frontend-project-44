@@ -7,13 +7,11 @@
 //         comonDivison = comonDivison + 1
 //     }
 // }
-// console.log(returnComonDivison(17 , 13)); 
+// console.log(returnComonDivison(17 , 13));
 
 const getGCD = (x, y) => {
-    if (y === 0) return x;
-    if (x < y) return getGCD(y, x);
-    return getGCD(y, x % y);
-  };
-  console.log(getGCD(14 , 49)); 
-
-
+  if (y === 0) return x;
+  if (x < y) return getGCD(y, x);
+  return getGCD(y, x % y);
+};
+console.log(getGCD(14, 49));
