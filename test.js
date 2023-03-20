@@ -14,4 +14,4 @@ const getGCD = (x, y) => {
   if (x < y) return getGCD(y, x);
   return getGCD(y, x % y);
 };
-console.log(getGCD(14, 49));
+console.log(getGCD(14, 59));
